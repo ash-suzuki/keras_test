@@ -5,7 +5,7 @@
     <ProjectGuid>679ea33a-b645-482e-88cb-8068acb61f8e</ProjectGuid>
     <ProjectTypeGuids>{8267e218-6b96-4d5d-a9df-50cedf58d05f};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>vgg16_test.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
