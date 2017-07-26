@@ -1,0 +1,55 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>679ea33a-b645-482e-88cb-8068acb61f8e</ProjectGuid>
+    <ProjectTypeGuids>{8267e218-6b96-4d5d-a9df-50cedf58d05f};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>vgg16_test.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>visual_studio_test</Name>
+    <RootNamespace>visual_studio_test</RootNamespace>
+    <InterpreterId>Global|VisualStudio|Conda env vs</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="download_mnist.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vgg16_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tb_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tfmlp.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clustering.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|VisualStudio|Conda env vs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
