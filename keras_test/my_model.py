@@ -13,7 +13,7 @@ import tensorflow as tf
 from tensorboard_environment import TensorboardEnvironment
 from keras.applications.vgg16 import VGG16
 
-def simple_full_connected(input_shape):
+def simple_full_connected(input_shape=(28, 28), n_classes=10):
     input_tensor = Input(shape=input_shape)
     x = Flatten()(input_tensor)
     x = Dense(1024, name='dense1', kernel_initializer='normal', kernel_regularizer=regularizers.l2(0.01), activity_regularizer=regularizers.l1(0.01))(x)
@@ -24,12 +24,12 @@ def simple_full_connected(input_shape):
     x = Activation('relu', name='relu2')(x)
     x = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True)(x)
     x = Dropout(0.0, name='dropout2')(x)
-    x = Dense(10, name='dense3', kernel_initializer='normal') (x)
+    x = Dense(n_classes, name='dense3', kernel_initializer='normal') (x)
     x = Activation('softmax', name='softmax1')(x)
     model = Model(inputs=input_tensor, outputs=x)
     return model
 
-def vgg_like(input_shape):
+def vgg_like(input_shape=(28, 28), n_classes=10):
     input_tensor = Input(shape=input_shape)
     # Block 1
     x = Conv2D(64, (3, 3), activation='relu', padding='same', name='block1_conv1')(input_tensor)
