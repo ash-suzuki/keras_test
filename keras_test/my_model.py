@@ -15,7 +15,7 @@ from keras.applications.vgg16 import VGG16
 
 def simple_full_connected(input_shape=(28, 28), n_classes=10):
     input_tensor = Input(shape=input_shape)
-    x = Flatten()(input_tensor)
+    x = Flatten(name='flatten')(input_tensor)
     x = Dense(1024, name='dense1', kernel_initializer='normal', kernel_regularizer=regularizers.l2(0.01), activity_regularizer=regularizers.l1(0.01))(x)
     x = Activation('relu', name='relu1')(x)
     x = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True)(x)
