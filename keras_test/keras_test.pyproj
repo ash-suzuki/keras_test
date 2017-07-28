@@ -24,6 +24,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="my_model.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -33,7 +36,7 @@
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="load_mnist.py">
+    <Compile Include="load_and_preprocess_mnist.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="vgg16_test.py">

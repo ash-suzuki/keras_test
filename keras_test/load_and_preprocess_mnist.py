@@ -5,7 +5,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 from keras.utils import np_utils
 from keras.datasets import mnist
 
-def load_mnist(x_style='gray', normalize_x=True, categorize_y=True):
+def load_and_preprocess_mnist(x_style='gray', normalize_x=True, categorize_y=True):
     """load_mnist
 
     x_style in ['gray', 'flat', 'rgb']
