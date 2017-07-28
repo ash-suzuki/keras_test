@@ -34,6 +34,7 @@ def load_mnist(x_style='gray', normalize_x=True, categorize_y=True):
         x_train /= 255
         x_test  /= 255
     if categorize_y:
+        n_classes = 10
         y_train = np_utils.to_categorical(y_train, n_classes)
         y_test = np_utils.to_categorical(y_test, n_classes)
     return (x_train, y_train), (x_test, y_test)
