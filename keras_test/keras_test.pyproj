@@ -33,7 +33,7 @@
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="download_mnist.py">
+    <Compile Include="load_mnist.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="vgg16_test.py">
