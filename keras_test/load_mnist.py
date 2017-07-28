@@ -1,5 +1,4 @@
 import os
-import sys
 import numpy as np
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"
@@ -17,6 +16,8 @@ def load_mnist(x_style='gray', normalize_x=True, categorize_y=True):
     categorize_y: if True, y_train and y_test will be one-hot vectors
     """
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    x_train = x_train.astype(np.float32)
+    x_test  = x_test.astype(np.float32)
     if x_style == 'gray':
         pass
     elif x_style == 'flat':
@@ -29,8 +30,6 @@ def load_mnist(x_style='gray', normalize_x=True, categorize_y=True):
         x_test = np.repeat(x_test, 3, axis=3)
     else:
         raise ValueError('x_style must be in [\'gray\', \'flat\', \'rgb\']: {} assigned'.format(x_style))
-    x_train = x_train.astype(np.float32)
-    x_test  = x_test.astype(np.float32)
     if normalize_x:
         x_train /= 255
         x_test  /= 255
